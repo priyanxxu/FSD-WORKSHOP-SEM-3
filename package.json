@@ -1,19 +1,23 @@
 {
-  "name": "web-development-sem-3",
+  "name": "wd-sem-3",
   "version": "1.0.0",
-  "description": "",
-  "homepage": "https://github.com/priyanxxu/FSD-WORKSHOP-SEM-3#readme",
+  "description": "backend poject",
+  "keywords": [
+    "backend",
+    "nodejs"
+  ],
+  "homepage": "https://github.com/priyanxxu/WEB-DEVELOPMENT-SEM-3#readme",
   "bugs": {
-    "url": "https://github.com/priyanxxu/FSD-WORKSHOP-SEM-3/issues"
+    "url": "https://github.com/priyanxxu/WEB-DEVELOPMENT-SEM-3/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/priyanxxu/FSD-WORKSHOP-SEM-3.git"
+    "url": "git+https://github.com/priyanxxu/WEB-DEVELOPMENT-SEM-3.git"
   },
   "license": "ISC",
-  "author": "",
-  "type": "module",
-  "main": "day 2.js",
+  "author": "piyanshu kuma",
+  "type": "commonjs",
+  "main": "DAY 3.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   }
