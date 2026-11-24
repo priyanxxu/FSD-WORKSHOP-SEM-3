@@ -12,15 +12,15 @@
     "email": "xyz@gmail.com"
   },
   {
-    "name": "risha",
-    "rollNumber": "1236",
-    "course": "b.tech",
-    "email": "mno@gmail.com"
-  },
-  {
     "name": "kunnu",
     "rollNumber": "2024",
     "course": "b.tech",
     "email": "ach@gmail.com"
+  },
+  {
+    "name": "harsh",
+    "rollNumber": "100",
+    "course": "b.tech",
+    "email": "ha@gmail.com"
   }
 ]

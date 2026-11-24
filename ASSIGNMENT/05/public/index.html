@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Download Files</title>
+  <style>
+   
+/* ================================
+   DOWNLOAD FILES - MODERN UI
+   Theme: Dark + Electric Blue
+================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: #0b1120;
+    color: #f1f5f9;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 80px 20px;
+}
+
+/* Main Heading */
+h1 {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: -1px;
+
+    background: linear-gradient(90deg, #38bdf8, #818cf8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    margin-bottom: 12px;
+}
+
+/* Description */
+body > p {
+    color: #94a3b8;
+    font-size: 15px;
+    margin-bottom: 35px;
+}
+
+/* Search Bar */
+#search {
+    width: 100%;
+    max-width: 480px;
+
+    padding: 16px 20px;
+
+    background: #172033;
+    color: white;
+
+    border: 1px solid #334155;
+    border-radius: 12px;
+
+    font-family: inherit;
+    font-size: 15px;
+
+    outline: none;
+    transition: 0.3s ease;
+
+    margin-bottom: 30px;
+}
+
+#search::placeholder {
+    color: #64748b;
+}
+
+#search:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.12);
+}
+
+/* Files Container */
+#files {
+    width: 100%;
+    max-width: 480px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Individual File Card */
+#files p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 22px 24px;
+
+    background: #172033;
+    border: 1px solid #26354d;
+    border-radius: 14px;
+
+    color: #e2e8f0;
+    font-size: 16px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+#files p:hover {
+    transform: translateY(-4px);
+    border-color: #38bdf8;
+    background: #1c2a42;
+
+    box-shadow: 0 8px 25px rgba(56, 189, 248, 0.08);
+}
+
+/* Download Button */
+#files a {
+    text-decoration: none;
+
+    background: linear-gradient(135deg, #0ea5e9, #6366f1);
+    color: white;
+
+    padding: 9px 17px;
+    border-radius: 8px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+#files a:hover {
+    transform: scale(1.06);
+    box-shadow: 0 5px 18px rgba(56, 189, 248, 0.3);
+}
+
+/* No Results Message */
+#empty {
+    color: #fb7185;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+/* Footer-like spacing */
+body > p:last-of-type {
+    margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+
+    body {
+        padding: 60px 18px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    #files p {
+        padding: 17px;
+        font-size: 14px;
+    }
+
+    #files a {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}
+
+  </style>
+</head>
+<body>
+  <h1>Download Files</h1>
+  <p>Search for a file and download it.</p>
+
+  <input id="search" type="search" placeholder="Search files">
+
+  <div id="files">
+    <p>FSD <a href="/files/fsd.txt" download>Download</a></p>
+    <p>React <a href="/files/react.txt" download>Download</a></p>
+    <p>Backend <a href="/files/backend.txt" download>Download</a></p>
+  </div>
+
+  <p id="empty" hidden>No matching files.</p>
+
+  <script>
+    const search = document.querySelector("#search");
+    const files = [...document.querySelectorAll("#files p")];
+    const empty = document.querySelector("#empty");
+
+    search.addEventListener("input", () => {
+      const query = search.value.toLowerCase();
+      let visibleFiles = 0;
+
+      files.forEach((file) => {
+        const matches = file.textContent.toLowerCase().includes(query);
+        file.hidden = !matches;
+        if (matches) visibleFiles++;
+      });
+
+      empty.hidden = visibleFiles > 0;
+    });
+  </script>
+</body>
+</html>

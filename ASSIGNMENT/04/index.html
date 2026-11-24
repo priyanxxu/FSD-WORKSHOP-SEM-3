@@ -1,0 +1,322 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="ABES Engineering College Campus Help Desk - Student Support Portal">
+
+    <title>Campus Help Desk | Student Support</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+
+        <div class="nav-content">
+
+            <span class="nav-brand">
+                <svg width="22" height="22" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                    <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+
+                </svg>
+
+                Campus Help Desk
+            </span>
+
+            <span class="nav-subtitle">
+                Student Support Portal
+            </span>
+
+        </div>
+
+    </nav>
+
+
+    <main class="container">
+
+        <!-- Hero Section -->
+        <header class="hero-header">
+
+            <span class="eyebrow">
+                STUDENT SUPPORT & SERVICES
+            </span>
+
+            <h1 class="hero-title">
+                Campus Help Desk.
+            </h1>
+
+            <p class="hero-desc">
+                One platform for all your campus concerns.
+                Report issues, request assistance and stay
+                connected with campus administration.
+            </p>
+
+        </header>
+
+
+        <!-- Submit / Edit Request Card -->
+        <section class="card form-card">
+
+            <div class="card-header">
+
+                <h2 id="form-title">
+                    Submit a New Request
+                </h2>
+
+                <p class="card-caption">
+                    Share your concern and our campus support
+                    team will look into it.
+                </p>
+
+            </div>
+
+
+            <form id="requestForm">
+
+                <input type="hidden" id="requestId">
+
+
+                <!-- Student Information -->
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="studentName">
+                            Student Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="studentName"
+                            placeholder="Enter your full name"
+                            required
+                            autocomplete="name"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            College Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email address"
+                            required
+                            autocomplete="email"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Request Information -->
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="category">
+                            Issue Category
+                        </label>
+
+                        <div class="select-wrapper">
+
+                            <select id="category" required>
+
+                                <option value="" disabled selected>
+                                    Select issue category
+                                </option>
+
+                                <option value="Hostel Facilities">
+                                    Hostel Facilities
+                                </option>
+
+                                <option value="Wi-Fi & Network">
+                                    Wi-Fi & Network
+                                </option>
+
+                                <option value="Academics">
+                                    Academics
+                                </option>
+
+                                <option value="Library">
+                                    Library
+                                </option>
+
+                                <option value="Maintenance">
+                                    Campus Maintenance
+                                </option>
+
+                                <option value="Mess & Canteen">
+                                    Mess & Canteen
+                                </option>
+
+                                <option value="Transportation">
+                                    Transportation
+                                </option>
+
+                                <option value="Other">
+                                    Other Issues
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="priority">
+                            Request Priority
+                        </label>
+
+                        <div class="select-wrapper">
+
+                            <select id="priority" required>
+
+                                <option value="" disabled selected>
+                                    Select priority
+                                </option>
+
+                                <option value="Low">
+                                    Low
+                                </option>
+
+                                <option value="Medium">
+                                    Medium
+                                </option>
+
+                                <option value="High">
+                                    High
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Problem Description -->
+                <div class="form-group">
+
+                    <label for="description">
+                        Describe Your Issue
+                    </label>
+
+                    <textarea
+                        id="description"
+                        rows="4"
+                        placeholder="Explain your problem clearly so that the support team can assist you..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- Buttons -->
+                <div class="button-group">
+
+                    <button
+                        type="submit"
+                        id="submitBtn"
+                        class="btn btn-primary"
+                    >
+                        Submit Request
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="cancelBtn"
+                        class="btn btn-secondary"
+                        style="display: none;"
+                    >
+                        Cancel
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- Submitted Requests -->
+        <section class="card list-card">
+
+            <div class="list-header">
+
+                <div>
+
+                    <h2>Campus Requests</h2>
+
+                    <p class="card-caption">
+                        View and manage submitted student requests.
+                    </p>
+
+                </div>
+
+
+                <span id="requestCount" class="badge-count">
+                    0 Requests
+                </span>
+
+            </div>
+
+
+            <div
+                id="requestsList"
+                class="requests-container"
+            >
+
+                <!-- Requests will be displayed here using JavaScript -->
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <p>
+            © 2026 Campus Help Desk.
+            Built with HTML, CSS, JavaScript & Express.js.
+        </p>
+
+        <p>
+            Designed for a better campus experience.
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="index.js"></script>
+
+</body>
+
+</html>
